@@ -50,6 +50,11 @@ namespace testEF.Models
                 }
             }
 
+            if (exception is TimeoutException)
+            {
+                return true;
+            }
+
             return base.ShouldRetryOn(exception);
         }
     }
